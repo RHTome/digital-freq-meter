@@ -3,7 +3,7 @@ output reg 	Cnt_CP;
 input 		_10kHz, _100kHz, _1MHz;
 input [1:0] T_sel;
 
-always @(T_sel) //T_sel or _10kHz or _100kHz or _1MHz | T_sel
+always @(T_sel or _10kHz or _100kHz or _1MHz) //T_sel or _10kHz or _100kHz or _1MHz | T_sel
 begin
 	case(T_sel)
 		2'b00: Cnt_CP <= _10kHz;
