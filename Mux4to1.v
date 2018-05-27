@@ -4,7 +4,7 @@ output reg 	Ctrl_CP;
 input  		_1Hz, _10Hz, _100Hz, _1kHz;
 input [1:0] F_sel;
 
-always @(F_sel) //F_sel or _1kHz or _100Hz or _10Hz or _1Hz | F_sel
+always @(F_sel or _1kHz or _100Hz or _10Hz or _1Hz) //F_sel or _1kHz or _100Hz or _10Hz or _1Hz | F_sel
 begin
 	case(F_sel)
 		2'b00: Ctrl_CP <= _1Hz;
