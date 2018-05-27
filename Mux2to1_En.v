@@ -3,7 +3,7 @@ output reg 	Enable;
 input  		Ctrl_CP, CPx, measure_mode, range_change, nRst;
 reg 		iEn;
 
-always @(measure_mode) begin//measure_mode or Ctrl_CP or CPx | measure_mode
+always @(measure_mode or Ctrl_CP or CPx) begin//measure_mode or Ctrl_CP or CPx | measure_mode
 	case(measure_mode)
 		0:iEn <= Ctrl_CP;
 		1:iEn <= CPx;
